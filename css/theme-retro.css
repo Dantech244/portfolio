@@ -1,0 +1,29 @@
+.theme-retro {
+    --bg-primary: #221408;
+    --bg-nav: rgba(34, 20, 8, 0.85);
+    --bg-card: #2d1a0c;
+    --bg-btn: #3d2310;
+    --text-primary: #ffb000;
+    --text-secondary: #a67300;
+    --text-on-accent: #221408;
+    --accent-color: #ffb000;
+    --accent-hover-bg: rgba(255, 176, 0, 0.15);
+    --accent-hover-border: #ffb000;
+    --border-color: #5e3619;
+    --shadow-color: rgba(255, 176, 0, 0.4);
+}
+
+.theme-retro.light-mode {
+    --bg-primary: #fbf6ef;
+    --bg-nav: rgba(251, 246, 239, 0.85);
+    --bg-card: #f3e5d8;
+    --bg-btn: #e6d0bc;
+    --text-primary: #5c3a21;
+    --text-secondary: #8c5832;
+    --text-on-accent: #fbf6ef;
+    --accent-color: #8c5832;
+    --accent-hover-bg: rgba(140, 88, 50, 0.1);
+    --accent-hover-border: #8c5832;
+    --border-color: #d4b296;
+    --shadow-color: rgba(140, 88, 50, 0.15);
+}

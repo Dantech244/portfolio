@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Portfolio</title>
+    <link rel="stylesheet" href="css/global.css">
+</head>
+<body class="theme-matrice">
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+
+    <nav class="universal-nav">
+        <div class="nav-brand">PORTFOLIO.OS</div>
+        <div class="nav-menu">
+            <a href="index.html" class="nav-item" data-lang="menu-home">Accueil</a>
+            <a href="actuel.html" class="nav-item" data-lang="menu-actuel">Actuel</a>
+            <a href="projets.html" class="nav-item" data-lang="menu-projets">Projets</a>
+            <a href="futur.html" class="nav-item" data-lang="menu-futur">Ambitions</a>
+            <a href="contact.html" class="nav-item active" data-lang="menu-contact">Contact</a>
+        </div>
+    </nav>
+
+    <main class="main-layout">
+        <section class="content-section">
+            <h1 data-lang="contact-title">Entrer en Contact</h1>
+            <div class="form-container">
+                <form action="#" method="POST" onsubmit="return false;">
+                    <div class="form-group">
+                        <label data-lang="label-name">Nom / Entreprise</label>
+                        <input type="text" required autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label data-lang="label-email">Adresse Email</label>
+                        <input type="email" required autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label data-lang="label-msg">Message</label>
+                        <textarea rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="selector-btn submit-btn" data-lang="btn-send">Transmettre le message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/theme-engine.js"></script>
+    <script src="js/lang-engine.js"></script>
+    <script src="js/cursor-engine.js"></script>
+</body>
+</html>

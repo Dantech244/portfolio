@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Root Session</title>
+    <link rel="stylesheet" href="../css/global.css">
+</head>
+<body class="theme-minimal">
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+
+    <main class="main-layout" style="margin-top: 20px;">
+        <section class="content-section">
+            <h1 style="color: var(--accent-color);">Panneau d'Administration Restreint</h1>
+            <div class="info-card" style="border-style: dashed; margin-bottom: 30px;">
+                <h2>Statut du serveur : En ligne</h2>
+                <p>Bienvenue, Administrateur. Ce terminal vous permet d'éditer les blocs de texte des bases de données de vos projets sans toucher au code brut HTML.</p>
+            </div>
+            
+            <div class="control-panel">
+                <div class="panel-box">
+                    <h2>Ajouter une Réalisation</h2>
+                    <div class="form-group">
+                        <label>Titre de la réalisation</label>
+                        <input type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Catégorie</label>
+                        <input type="text" placeholder="Pro / Perso / Certificat">
+                    </div>
+                    <button class="selector-btn active" style="width: 100%;">Publier sur le site</button>
+                </div>
+                
+                <div class="panel-box" style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h2>Sécurité Session</h2>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Session racine active. Aucune inscription d'utilisateur externe n'est autorisée sur cette interface.</p>
+                    </div>
+                    <button class="mode-btn" onclick="window.location.href='../index.html'" style="margin-top: 20px;">Déconnexion (Quitter la racine)</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const cursor = document.querySelector('.custom-cursor');
+        const dot = document.querySelector('.custom-cursor-dot');
+        window.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px';
+            dot.style.left = e.clientX + 'px'; dot.style.top = e.clientY + 'px';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+.theme-matrice {
+    --bg-primary: #0a0f0d;
+    --bg-nav: rgba(10, 15, 13, 0.85);
+    --bg-card: #0d1612;
+    --bg-btn: #111f18;
+    --text-primary: #00ff66;
+    --text-secondary: #00aa44;
+    --text-on-accent: #000000;
+    --accent-color: #00ff66;
+    --accent-hover-bg: rgba(0, 255, 102, 0.15);
+    --accent-hover-border: #00ff66;
+    --border-color: #004411;
+    --shadow-color: rgba(0, 255, 102, 0.3);
+}
+
+/* Mode Clair Matrice */
+.theme-matrice.light-mode {
+    --bg-primary: #e8f5e9;
+    --bg-nav: rgba(232, 245, 233, 0.85);
+    --bg-card: #ffffff;
+    --bg-btn: #c8e6c9;
+    --text-primary: #1b5e20;
+    --text-secondary: #2e7d32;
+    --text-on-accent: #ffffff;
+    --accent-color: #2e7d32;
+    --accent-hover-bg: rgba(46, 125, 50, 0.1);
+    --accent-hover-border: #2e7d32;
+    --border-color: #a5d6a7;
+    --shadow-color: rgba(46, 125, 50, 0.15);
+}

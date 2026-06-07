@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Console d'Administration - Restricted Area</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+        .login-layout {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #050505 !important;
+        }
+        .login-box {
+            width: 100%;
+            max-width: 400px;
+            padding: 40px;
+            background-color: #0c0c0c;
+            border: 1px solid #ff0000;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+            border-radius: 4px;
+        }
+        .login-box h1 {
+            color: #ff0000;
+            font-size: 1.3rem;
+            text-align: center;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+        .admin-btn {
+            border-color: #ff0000 !important;
+            color: #ff0000 !important;
+            margin-top: 10px;
+        }
+        .admin-btn:hover {
+            background-color: #ff0000 !important;
+            color: #000000 !important;
+        }
+    </style>
+</head>
+<body class="theme-minimal">
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+
+    <main class="login-layout">
+        <div class="login-box">
+            <h1>GATEWAY // ADMIN_PANEL</h1>
+            <form onsubmit="window.location.href='dashboard.html'; return false;">
+                <div class="form-group">
+                    <label style="color: #ff0000;">ID_OPERATOR</label>
+                    <input type="text" required style="border-color: #330000; background-color: #110000; color: #ff0000;">
+                </div>
+                <div class="form-group">
+                    <label style="color: #ff0000;">PASSKEY</label>
+                    <input type="password" required style="border-color: #330000; background-color: #110000; color: #ff0000;">
+                </div>
+                <button type="submit" class="mode-btn admin-btn">INITIALIZE_SESSION</button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        // Code ultra-simplifié pour animer la souris sur l'écran d'accueil admin
+        const cursor = document.querySelector('.custom-cursor');
+        const dot = document.querySelector('.custom-cursor-dot');
+        window.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px';
+            dot.style.left = e.clientX + 'px'; dot.style.top = e.clientY + 'px';
+        });
+    </script>
+</body>
+</html>
