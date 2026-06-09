@@ -1,20 +1,13 @@
-# 🟢 PORTFOLIO.OS
+#  PORTFOLIO.OS
 
 PORTFOLIO.OS is an interactive, multi-page personal portfolio styled as a retro terminal operating system. It allows visitors to explore my academic background, ongoing tech projects, skills, and future ambitions through a responsive command-line inspired interface.
+---
 
-<p align="center">
-  <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="PORTFOLIO.OS Preview" width="100%">
-</p>
+### [**Live Demo: Open PORTFOLIO.OS in your browser**](https://dantech244.github.io/portfolio/)
 
 ---
 
-## 🔗 Try It Out
-
-### 🚀 [**Live Demo: Open PORTFOLIO.OS in your browser**](https://dantech244.github.io/portfolio/)
-
----
-
-## ⚡ Quick Start
+##  Quick Start
 
 To explore this project, you don't need to install anything:
 1. **Click the Live Demo link above** to boot into the terminal interface.
@@ -38,4 +31,9 @@ Instead of relying on heavy frameworks like React or Next.js, this project is bu
 * **The Theme Engine:** Leverages **CSS Custom Properties (Variables)** mapped to the `:root` element. When a user clicks a theme, JavaScript updates the dataset attributes, instantly swapping the color palette globally without reloading the page.
 * **The Translation System:** Powered by a localized JSON-like JavaScript object map. Elements containing `data-i18n` attributes are dynamically targetted and updated in the DOM when a language switch event is triggered.
 
+---
+
+## Using AI 
+
+* **Using AI** As a beginner in web development, I relied heavily on AI to learn how to code, find examples, and get feedback on my work. I also made extensive use of Visual Studio Code’s autocomplete feature because I was too impatient to wait for results. For my future projects, I plan to use less AI so I can enjoy the process more.
 ---
