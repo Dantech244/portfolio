@@ -11,7 +11,7 @@ const dictionary = {
         'proj-pro-title': 'Architecture Réseau & Portfolio d\'études', 'proj-pro-desc': 'Conception d\'une interface web multi-thème entièrement dynamique avec isolation des scripts et internationalisation native.',
         'proj-perso-title': 'Systèmes Embarqués & Hardware', 'proj-perso-desc': 'Automatisation et développement de scripts sur microcontrôleurs (projets périphériques de tests de pénétration et IoT).',
         'certif-title': 'Attestations & Formations validées', 'certif-desc': 'Suivi de cursus spécialisés en développement informatique, validation d\'acquis techniques et heures de pratique validées.',
-        'futur-title': 'Objectifs & Ambitions Professionnelles', 'futur-step1': 'Spécialisation poussée en développement d\'applications sécurisées et administration de systèmes d'infrastructure avancés.',
+        'futur-title': 'Objectifs & Ambitions Professionnelles', 'futur-step1': 'Spécialisation poussée en développement d\'applications sécurisées et administration de systèmes d\'infrastructure avancés.',
         'futur-step2': 'Intégration d\'équipes techniques d\'ingénierie et déploiement de solutions logicielles complexes à grande échelle.',
         'contact-title': 'Entrer en Contact', 'label-name': 'Nom / Entreprise', 'label-email': 'Adresse Email', 'label-msg': 'Message', 'btn-send': 'Transmettre le message'
     },
@@ -41,7 +41,7 @@ const dictionary = {
         'actuel-text2': 'Apasionado de la ciberseguridad, la electrónica DIY, el modelado 3D y las interfaces de usuario interactivas.',
         'projets-title': 'Mis Logros y Certificaciones', 'badge-pro': 'Profesional', 'badge-perso': 'Personal', 'badge-certif': 'Certificado',
         'proj-pro-title': 'Arquitectura de Red y Portafolio de Estudios', 'proj-pro-desc': 'Diseño de una interfaz web multitema totalmente dinámica con aislamiento de scripts e internacionalización nativa.',
-        'proj-perso-title': 'Sistemas Embebidos y Hardware', 'proj-perso-desc': 'Automatización y desarrollo de scripts en microcontroladores (proyectos periféricos para pruebas de penetración e IoT).',
+        'proj-perso-title': 'Sistemas Embebidos y Hardware', 'proj-perso-desc': 'Automatización y desarrollo de scripts en microcontroladores (projets periféricos para pruebas de penetración e IoT).',
         'certif-title': 'Validaciones y Capacitación Completada', 'certif-desc': 'Seguimiento de cursos especializados en desarrollo de software, validación de competencias técnicas y horas de práctica validadas.',
         'futur-title': 'Metas Profesionales y Ambiciones', 'futur-step1': 'Especialización avanzada en desarrollo de aplicaciones seguras y administración avanzada de sistemas de infraestructura.',
         'futur-step2': 'Incorporación a equipos técnicos de ingeniería y despliegue de soluciones de software complejas a gran escala.',
@@ -84,11 +84,14 @@ const dictionary = {
 function changeLanguage(langCode) {
     localStorage.setItem('user-lang', langCode);
     
-    // Parcourt tous les éléments qui ont un attribut data-lang
+    // Évite les plantages si la langue demandée n'existe pas
+    if (!dictionary[langCode]) return;
+
+    // 1. Traduction de tous les éléments de la page courante
     const elements = document.querySelectorAll('[data-lang]');
     elements.forEach(el => {
         const key = el.getAttribute('data-lang');
-        if (dictionary[langCode] && dictionary[langCode][key]) {
+        if (dictionary[langCode][key]) {
             if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
                 el.placeholder = dictionary[langCode][key];
             } else {
@@ -97,17 +100,19 @@ function changeLanguage(langCode) {
         }
     });
 
-    // Met à jour l'état visuel des boutons de langue
+    // 2. Gestion de la classe active sur les boutons (version ultra sécurisée sans innerText)
     const buttons = document.querySelectorAll('.lang-btn');
     buttons.forEach(btn => {
         btn.classList.remove('active');
-        if (btn.innerText.toLowerCase().includes(langCode) || (langCode === 'ru' && btn.innerText.includes('РУС'))) {
+        // On vérifie directement l'argument passé dans l'attribut onclick du bouton HTML
+        const clickAttr = btn.getAttribute('onclick') || '';
+        if (clickAttr.includes(`'${langCode}'`) || clickAttr.includes(`"${langCode}"`)) {
             btn.classList.add('active');
         }
     });
 }
 
-// Applique la langue sauvegardée au chargement
+// Applique la langue sauvegardée au chargement global
 document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('user-lang') || 'fr';
     changeLanguage(savedLang);
